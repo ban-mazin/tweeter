@@ -1,0 +1,25 @@
+.button {
+  background-color: #4056a1;
+  border: none;
+  color: #ffffff;
+}
+
+textarea {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid;
+  background-color: #f4f2ef;
+  display: flex;
+  align-items: center;
+  outline-color: white;
+}
+
+div.PostTweet {
+  padding: 5px 0px;
+  display: flex;
+  font-family: "Bungee", "sans-serif";
+  justify-content: space-between;
+}
+

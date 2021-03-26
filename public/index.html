@@ -3,27 +3,67 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans&family=Source+Sans+Pro:wght@200;400;600&display=swap" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweetContainer.css" type="text/css" />
+    
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/moment.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
+      <div class="composeTweet">
+        <span class="write"> <strong>Write</strong> a new tweet</span>
+        <button type="button" id="ToggleButton"><img src="/images/classic-arrows.png" width="20px" height="20px"></button>
+      </div>
     </nav>
-
+    <header class="main">
+      <div class="profile_logo">
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <div>
+        <P class="name">Ban</P>
+      </div>
+  </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <div id="Long" class= "error">
+          <p>⚠️ Too Long Please Respect our arbitrary limit of 140 char❗❗</p> 
+        </div>
+        <div id="short" class="error">
+          <p>⚠️ Please Enter a Tweet❗❗</p>
+        </div>
+       <!-- <h2>Compose Tweet</h2>-->
+        <form id="tweetForm" method="POST" action="/tweets" >
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?" wrap="hard" cols="10"></textarea>
+          <div class="PostTweet">
+            <button type="submit" class="button">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="tweetContainer">
+      </section>
+    </main>
   </body>
 </html>

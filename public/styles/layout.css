@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -14,10 +15,43 @@ html {
  * Global layout stuff
  */
 
-body {
+body.main {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", "sans-serif";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Source Sans Pro", "sans-serif";
+  margin-top: 100px;
+  width: 100%;
+  padding: 3em;
+}
+
+section h2 {
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media only screen and (min-width: 768px) {
+  main{
+    margin-top: 0px;
+  }
+  body.main{
+    
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
 
 /*
